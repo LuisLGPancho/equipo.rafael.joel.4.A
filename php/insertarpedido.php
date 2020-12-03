@@ -13,7 +13,7 @@ if(isset($_POST['c_account_password'])){
         $password = $_POST['c_account_password'];
     }
 }
-$re = $conexion->query("select id,email from usuario where email = '".$_POST['c_email_address'].".")or die($conexion->error);
+$re = $conexion->query("select id,email from usuario where email = '".$_POST['c_email_address']."'")or die($conexion->error);
 $id_usuario = 0;
 if(mysqli_num_rows($re)>0){
   $fila = mysqli_fetch_row($re);
